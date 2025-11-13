@@ -21,7 +21,7 @@ def to_numeric(series):
     """Convert a pandas Series to numeric, removing commas, rupee symbols, stray text."""
     return pd.to_numeric(series.astype(str).str.replace(r'[^\d.\-]', '', regex=True), errors='coerce')
 
-def main(filename="bill_data.csv"):
+def main(filename="electricity_bill_dataset.csv"):
     print(f"Loading {filename} ...")
     df = pd.read_csv(filename)
     print("Columns found:", list(df.columns))
