@@ -67,7 +67,7 @@
   <!-- ================= WELCOME ================= -->
   <div id="welcomePage" class="page active">
     <div class="card">
-      <h1>Welcome!</h1>
+      <h1>Welcome to WattsUp!</h1>
       <p>What would you like to do today?</p>
       <div class="actions">
         <button class="btn chat" onclick="gotoChat()">Chat with XYZ</button>
@@ -79,7 +79,7 @@
   <!-- ================= CHAT ================= -->
   <div id="chatPage" class="page">
     <div class="chat-box">
-      <div class="chat-header">💬 Chat with XYZ</div>
+      <div class="chat-header">Chat with XYZ</div>
       <div id="messages" class="messages">Ask away!</div>
       <div class="input-row">
         <input id="msgInput" type="text" placeholder="Type a message…" onkeypress="if(event.key==='Enter')sendMsg()"/>
@@ -92,7 +92,7 @@
   <!-- ================= PREDICT ================= -->
   <div id="predictPage" class="page">
     <div class="card">
-      <h2>📈 Predict Bill</h2>
+      <h2>Predict Bill</h2>
       <p>TODO: plug regression here</p>
       <div class="back-link" onclick="gotoWelcome()">← Back</div>
     </div>
@@ -132,4 +132,5 @@
     }
   </script>
 </body>
+
 </html>
