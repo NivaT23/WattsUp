@@ -21,8 +21,44 @@ if page == "home":
 
 # ---------- BILL PREDICTOR PAGE ----------
 elif page == "predict":
+    # inside: elif page == "predict":
+    # --- inject page-specific background (only for predict page) ---
+    bg_url = "https://www.repsol.com/content/dam/repsol-corporate/es/energia-e-innovacion/energia%20electrica%20cables%20alta%20tension.jpg"
+    st.markdown(
+        f"""
+        <style>
+        /* make app container background transparent so our ::before shows */
+        .stApp {{
+            background: transparent;
+        }}
+
+        /* add a fixed pseudo-element with the background image + overlay */
+        .stApp::before {{
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+            linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), /* dark overlay: change opacity here */
+            url("{bg_url}") center/cover no-repeat;
+            /* tweak these to control "opacity" and blur */
+            filter: brightness(0.55) blur(1px); /* blur: 0 (none) -> increase for more blur */
+            -webkit-backdrop-filter: blur(1px);
+            background-attachment: fixed;
+            pointer-events: none;
+            transform: translateZ(0);
+        }}
+
+        /* optional: make main content card more opaque so text is readable */
+        .css-1n76uvr, /* Streamlit main content wrapper (may vary) */
+        .main {{
+            background: rgba(255,255,255,0.02) !important;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
     st.header("Predict Next Month’s Electricity Bill")
-    st.markdown('<style>.stApp{background:url("https://www.repsol.com/content/dam/repsol-corporate/es/energia-e-innovacion/energia%20electrica%20cables%20alta%20tension.jpg") center/cover}</style>', unsafe_allow_html=True)
     st.markdown(
         "Enter your last 3 months' Units and Bills (₹). "
         "The model estimates the next month’s consumption and predicts the bill."
