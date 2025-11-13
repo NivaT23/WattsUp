@@ -22,6 +22,7 @@ if page == "home":
 # ---------- BILL PREDICTOR PAGE ----------
 elif page == "predict":
     st.header("Predict Next Month’s Electricity Bill")
+    st.markdown('<style>.stApp{background:url("https://www.repsol.com/content/dam/repsol-corporate/es/energia-e-innovacion/energia%20electrica%20cables%20alta%20tension.jpg") center/cover}</style>', unsafe_allow_html=True)
     st.markdown(
         "Enter your last 3 months' Units and Bills (₹). "
         "The model estimates the next month’s consumption and predicts the bill."
@@ -75,3 +76,4 @@ elif page == "predict":
     # Back button
     if st.button("← Back to Home"):
         st.query_params["page"] = "home"
+
