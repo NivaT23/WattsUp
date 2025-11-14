@@ -70,7 +70,7 @@
       <h1>Welcome to WattsUp!</h1>
       <p>What would you like to do today?</p>
       <div class="actions">
-        <button class="btn chat" onclick="gotoChat()">Chat with XYZ</button>
+       <button class="btn chat" onclick="window.location.href='?page=chat'">Chat with WattSon</button>
        <button class="btn secondary" onclick="window.location.href='?page=predict'">Predict Bill</button>
       </div>
     </div>
@@ -79,7 +79,7 @@
   <!-- ================= CHAT ================= -->
   <div id="chatPage" class="page">
     <div class="chat-box">
-      <div class="chat-header">Chat with XYZ</div>
+      <div class="chat-header">Chat with WattSon</div>
       <div id="messages" class="messages">Ask away!</div>
       <div class="input-row">
         <input id="msgInput" type="text" placeholder="Type a message…" onkeypress="if(event.key==='Enter')sendMsg()"/>
@@ -120,7 +120,7 @@
       if(!txt)return;
       appendMessage('You',txt);
       input.value='';
-      setTimeout(()=>appendMessage('XYZ','Got it: '+txt),600);
+      setTimeout(()=>appendMessage('WattSon','Got it: '+txt),600);
     }
     function appendMessage(sender,txt){
       const box=document.getElementById('messages');
@@ -133,6 +133,10 @@
 </body>
 
 </html>
+
+
+
+
 
 
 
